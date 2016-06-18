@@ -42,7 +42,7 @@ class RectangleView: UIView {
     // MARK: Setup Rectangle Layer
     
     func setup() {
-        rectangleLayer.backgroundColor = UIColor(red: 0/255, green: 173/255, blue: 242/255, alpha: 1.0).CGColor
+        rectangleLayer.backgroundColor = UIColor(red: 0/255, green: 180/255, blue: 230/255, alpha: 1.0).CGColor
         rectangleLayer.frame.size.width = 300
         rectangleLayer.frame.size.height = 45
         rectangleLayer.cornerRadius = rectangleLayer.frame.size.height/2
