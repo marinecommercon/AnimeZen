@@ -11,6 +11,7 @@
 		78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C7E1D155D3E00FC01FC /* CustomButton.swift */; };
 		78363C811D155D5100FC01FC /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C801D155D5100FC01FC /* RectangleView.swift */; };
 		78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C821D155D5D00FC01FC /* SpinningView.swift */; };
+		78363C8A1D15F10200FC01FC /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C891D15F10200FC01FC /* PopUpView.swift */; };
 		783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED16F1D1529A60005C90D /* AppDelegate.swift */; };
 		783ED1791D1529A60005C90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1781D1529A60005C90D /* Assets.xcassets */; };
 		783ED1871D1529A60005C90D /* MyAnimationExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED1861D1529A60005C90D /* MyAnimationExerciseTests.swift */; };
@@ -43,6 +44,7 @@
 		78363C7E1D155D3E00FC01FC /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		78363C801D155D5100FC01FC /* RectangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		78363C821D155D5D00FC01FC /* SpinningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningView.swift; sourceTree = "<group>"; };
+		78363C891D15F10200FC01FC /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		783ED16C1D1529A60005C90D /* MyAnimationExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimationExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783ED16F1D1529A60005C90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783ED1781D1529A60005C90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78363C881D15F0F400FC01FC /* PopUp */ = {
+			isa = PBXGroup;
+			children = (
+				78363C891D15F10200FC01FC /* PopUpView.swift */,
+			);
+			path = PopUp;
+			sourceTree = "<group>";
+		};
 		783ED1631D1529A60005C90D = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		783ED1A21D155B2C0005C90D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				78363C881D15F0F400FC01FC /* PopUp */,
 				783ED1A31D155B2C0005C90D /* CustomButton */,
 				783ED1A41D155B2C0005C90D /* Nib */,
 			);
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78363C8A1D15F10200FC01FC /* PopUpView.swift in Sources */,
 				78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */,
 				783ED1AD1D155B2C0005C90D /* SecondViewController.swift in Sources */,
 				78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */,

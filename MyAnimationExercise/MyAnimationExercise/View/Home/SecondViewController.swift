@@ -46,13 +46,6 @@ class SecondViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        UIView.animateWithDuration(1.5, delay: 2.0, usingSpringWithDamping: 0.3, initialSpringVelocity: 3.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
-            self.constraintY.constant = 10
-            self.view.layoutIfNeeded()
-            
-        }), completion: nil)
-       
-        
     }
     
     
@@ -99,6 +92,15 @@ class SecondViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+    
+    @IBAction func clickPopUp(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            self.constraintY.constant = 10
+            self.view.layoutIfNeeded()
+            
+        }), completion: nil)
     }
 
 
