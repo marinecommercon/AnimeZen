@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78363C7D1D155D2E00FC01FC /* CustomButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78363C7C1D155D2E00FC01FC /* CustomButton.xib */; };
+		78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C7E1D155D3E00FC01FC /* CustomButton.swift */; };
+		78363C811D155D5100FC01FC /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C801D155D5100FC01FC /* RectangleView.swift */; };
+		78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C821D155D5D00FC01FC /* SpinningView.swift */; };
 		783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED16F1D1529A60005C90D /* AppDelegate.swift */; };
 		783ED1791D1529A60005C90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1781D1529A60005C90D /* Assets.xcassets */; };
 		783ED1871D1529A60005C90D /* MyAnimationExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED1861D1529A60005C90D /* MyAnimationExerciseTests.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78363C7C1D155D2E00FC01FC /* CustomButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomButton.xib; sourceTree = "<group>"; };
+		78363C7E1D155D3E00FC01FC /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		78363C801D155D5100FC01FC /* RectangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		78363C821D155D5D00FC01FC /* SpinningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningView.swift; sourceTree = "<group>"; };
 		783ED16C1D1529A60005C90D /* MyAnimationExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimationExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783ED16F1D1529A60005C90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783ED1781D1529A60005C90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +155,9 @@
 		783ED1A31D155B2C0005C90D /* CustomButton */ = {
 			isa = PBXGroup;
 			children = (
+				78363C7E1D155D3E00FC01FC /* CustomButton.swift */,
+				78363C801D155D5100FC01FC /* RectangleView.swift */,
+				78363C821D155D5D00FC01FC /* SpinningView.swift */,
 			);
 			path = CustomButton;
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 		783ED1A41D155B2C0005C90D /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				78363C7C1D155D2E00FC01FC /* CustomButton.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -280,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78363C7D1D155D2E00FC01FC /* CustomButton.xib in Resources */,
 				783ED1AF1D155B2C0005C90D /* Main.storyboard in Resources */,
 				783ED1791D1529A60005C90D /* Assets.xcassets in Resources */,
 				783ED1AE1D155B2C0005C90D /* LaunchScreen.storyboard in Resources */,
@@ -307,9 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */,
 				783ED1AD1D155B2C0005C90D /* SecondViewController.swift in Sources */,
+				78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */,
 				783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */,
 				783ED1AC1D155B2C0005C90D /* FirstViewController.swift in Sources */,
+				78363C811D155D5100FC01FC /* RectangleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -526,6 +542,7 @@
 				783ED1981D1529A60005C90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		783ED1991D1529A60005C90D /* Build configuration list for PBXNativeTarget "MyAnimationExerciseTests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +551,7 @@
 				783ED19B1D1529A60005C90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		783ED19C1D1529A60005C90D /* Build configuration list for PBXNativeTarget "MyAnimationExerciseUITests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +560,7 @@
 				783ED19E1D1529A60005C90D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
