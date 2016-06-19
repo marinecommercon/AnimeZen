@@ -29,13 +29,21 @@ extension UIImage {
     }
 }
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupDelegate {
 
     var tabBar: UITabBar?
     var ratio : CGFloat = 0.0
+    var canAnimateButton = true
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var messageButton: CustomButton!
+    @IBOutlet weak var whatsappButton: CustomButton!
+    @IBOutlet weak var facebookButton: CustomButton!
+    @IBOutlet weak var twitterButton: CustomButton!
+    @IBOutlet weak var mailButton: CustomButton!
+    
     @IBOutlet weak var constraintY: NSLayoutConstraint!
+    @IBOutlet weak var customPopupView: CustomPopUp!
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -45,16 +53,27 @@ class SecondViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        self.constraintY.constant = 89
         
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.constraintY.constant = 89
+        
+        self.constraintY.constant = 89
+        
+        // Delegate Popup
+        self.customPopupView.customPopupDelegate = self
+        
+        // Delegate Buttons
+        self.messageButton.customButtonDelegate = self
+        self.whatsappButton.customButtonDelegate = self
+        self.facebookButton.customButtonDelegate = self
+        self.twitterButton.customButtonDelegate = self
+        self.mailButton.customButtonDelegate = self
+        
         initTabBar()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,13 +113,18 @@ class SecondViewController: UIViewController {
         return newImage
     }
     
-    @IBAction func clickPopUp(sender: AnyObject) {
-        
+    func didClickOnCross() {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            
+            self.customPopupView.alpha = 0
             self.constraintY.constant = 10
             self.view.layoutIfNeeded()
             
         }), completion: nil)
+    }
+    
+    func didFinishAnimation() {
+        //
     }
 
 

@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable class PopUpView: UIView {
     
     let popupLayer = CALayer()
-    
+
     // MARK: Init View
     
     override init(frame: CGRect) {

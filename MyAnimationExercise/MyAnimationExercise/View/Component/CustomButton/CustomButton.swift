@@ -8,10 +8,18 @@
 
 import UIKit
 
-@IBDesignable class CustomButton: UIView, RectangleViewDelegate {
+// MARK: Protocol
+
+protocol CustomButtonDelegate {
+    func didFinishAnimation()
+}
+
+@IBDesignable class CustomButton: UIView, RectangleViewDelegate, SpinningViewDelegate {
     
     // The custom view from the XIB file
     var view: UIView!
+    var customButtonDelegate: CustomButtonDelegate?
+
     
     // Outlets
     @IBOutlet weak var rectangleView: RectangleView!
@@ -24,7 +32,7 @@ import UIKit
     // MARK: Set Properties
     
     // Dynamic properties for the view
-    @IBInspectable var labelText: String = "" {
+    @IBInspectable var labelText: String! {
         didSet {
             self.shareLabel.text = labelText
         }
@@ -83,6 +91,8 @@ import UIKit
         if touches.first != nil {
             
             self.rectangleView.rectangleViewDelegate = self
+            self.spinningView.spinningViewDelegate = self
+            
             self.rectangleView.updateAnimation()
             
             UIView.animateWithDuration(0.7, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
@@ -108,6 +118,10 @@ import UIKit
     
     func didFinishRectangleAnimation() {
         self.spinningView.updateAnimation()
+    }
+    
+    func didFinishSpinningAnimation() {
+        customButtonDelegate?.didFinishAnimation()
     }
     
 }

@@ -42,26 +42,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-8d-f4P" userLabel="PopUp View" customClass="PopUpView" customModule="MyAnimationExercise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="320" height="66"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcd-K5-goQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
-                                        <connections>
-                                            <action selector="clickPopUp:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="3TS-7v-cjP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="dcd-K5-goQ" firstAttribute="top" secondItem="qn0-8d-f4P" secondAttribute="top" id="AIh-h7-Ljf"/>
-                                    <constraint firstAttribute="width" constant="320" id="Cz8-vx-7vq"/>
-                                    <constraint firstItem="dcd-K5-goQ" firstAttribute="leading" secondItem="qn0-8d-f4P" secondAttribute="leading" id="Har-Ny-PlX"/>
-                                    <constraint firstAttribute="bottom" secondItem="dcd-K5-goQ" secondAttribute="bottom" id="WLT-Xb-1sN"/>
-                                    <constraint firstAttribute="height" constant="66" id="b1R-DM-fXA"/>
-                                    <constraint firstAttribute="trailing" secondItem="dcd-K5-goQ" secondAttribute="trailing" id="k7S-Vi-3E1"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtD-9a-dRw">
                                 <rect key="frame" x="0.0" y="30" width="320" height="521"/>
                                 <subviews>
@@ -186,6 +166,17 @@
                                     <constraint firstAttribute="trailing" secondItem="byo-IY-fXW" secondAttribute="trailing" id="wyi-mS-RCL"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-8d-f4P" userLabel="PopUp View" customClass="CustomPopUp" customModule="MyAnimationExercise" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="30" width="320" height="66"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Cz8-vx-7vq"/>
+                                    <constraint firstAttribute="height" constant="66" id="b1R-DM-fXA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Also works for people who don’t have Zenly!"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0093171742259999992" green="0.78513344299999999" blue="0.97756881600000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -203,7 +194,13 @@
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
                         <outlet property="constraintY" destination="3RM-DH-cnf" id="8mx-kO-RUr"/>
+                        <outlet property="customPopupView" destination="qn0-8d-f4P" id="R6i-xh-C4S"/>
+                        <outlet property="facebookButton" destination="exO-FP-FVG" id="lxU-tk-Pgp"/>
+                        <outlet property="mailButton" destination="2Vu-WW-L1X" id="5gY-pF-ijM"/>
                         <outlet property="mainView" destination="NtD-9a-dRw" id="aoT-2w-fzb"/>
+                        <outlet property="messageButton" destination="ojk-Bw-FXx" id="6te-UL-Fxp"/>
+                        <outlet property="twitterButton" destination="iVa-g0-oNs" id="sdM-YI-JYH"/>
+                        <outlet property="whatsappButton" destination="LF0-tj-4eL" id="37f-1u-WfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

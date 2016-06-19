@@ -114,4 +114,10 @@ class SpinningView: UIView {
         CATransaction.commit()
     }
     
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+        if(flag){
+            spinningViewDelegate?.didFinishSpinningAnimation()
+        }
+    }
+    
 }
