@@ -33,7 +33,6 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
 
     var tabBar: UITabBar?
     var ratio : CGFloat = 0.0
-    var canAnimateButton = true
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var messageButton: CustomButton!
@@ -124,9 +123,12 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
     }
     
     func didFinishAnimation() {
-        //
+        self.view.userInteractionEnabled = true
     }
 
+    func didBeginAnimation() {
+        self.view.userInteractionEnabled = false
+    }
 
 
 }

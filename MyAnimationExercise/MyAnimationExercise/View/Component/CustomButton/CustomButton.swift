@@ -11,6 +11,7 @@ import UIKit
 // MARK: Protocol
 
 protocol CustomButtonDelegate {
+    func didBeginAnimation()
     func didFinishAnimation()
 }
 
@@ -19,7 +20,6 @@ protocol CustomButtonDelegate {
     // The custom view from the XIB file
     var view: UIView!
     var customButtonDelegate: CustomButtonDelegate?
-
     
     // Outlets
     @IBOutlet weak var rectangleView: RectangleView!
@@ -48,14 +48,10 @@ protocol CustomButtonDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         xibSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        // Setup for property
-        
-        
         // Call super.init(coder:)
         super.init(coder: aDecoder)
         
@@ -94,13 +90,13 @@ protocol CustomButtonDelegate {
             self.spinningView.spinningViewDelegate = self
             
             self.rectangleView.updateAnimation()
+            self.customButtonDelegate?.didBeginAnimation()
             
             UIView.animateWithDuration(0.7, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
                 self.shareView.alpha = 0
                 }, completion: { (finished: Bool) -> Void in
                     
             })
-            
         }
     }
     
