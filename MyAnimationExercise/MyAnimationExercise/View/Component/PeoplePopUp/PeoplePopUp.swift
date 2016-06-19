@@ -1,5 +1,5 @@
 //
-//  SimpleButton.swift
+//  PeoplePopUp.swift
 //  MyAnimationExercise
 //
 //  Created by Technique on 19/06/2016.
@@ -10,32 +10,26 @@ import UIKit
 
 // MARK: Protocol
 
-protocol SimpleButtonDelegate {
-    func didClickOnStopButton()
+protocol PeoplePopupDelegate {
+    func didClickOnCross()
 }
 
-@IBDesignable class SimpleButton: UIView {
+@IBDesignable class PeoplePopUp: UIView {
     
     // The custom view from the XIB file
     var view: UIView!
-    var simpleButtonDelegate: SimpleButtonDelegate?
-    var customTag: NSString!
+    var peoplePopupDelegate: PeoplePopupDelegate?
     
-    // Outlets
-    @IBOutlet weak var simpleLabel: UILabel!
+    @IBOutlet weak var popupLabel: UILabel!
+    @IBOutlet weak var popupView: PopUpView!
+    @IBOutlet weak var popupButton: UIButton!
     
     // MARK: Set Properties
     
     // Dynamic properties for the view
-    @IBInspectable var labelText: String! {
+    @IBInspectable var labelText: String = "" {
         didSet {
-            self.simpleLabel.text = labelText
-        }
-    }
-    
-    @IBInspectable var buttonTag: NSString! {
-        didSet {
-            self.customTag = buttonTag
+            self.popupLabel.text = labelText
         }
     }
     
@@ -43,10 +37,14 @@ protocol SimpleButtonDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         xibSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        // Setup for property
+        
+        
         // Call super.init(coder:)
         super.init(coder: aDecoder)
         
@@ -69,32 +67,18 @@ protocol SimpleButtonDelegate {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "SimpleButton", bundle: bundle)
+        let nib = UINib(nibName: "PeoplePopUp", bundle: bundle)
         
         // AUIView is top level and the only object in nib
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
     
-    // MARK: Handle Touches Gesture
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if touches.first != nil {
-            if(self.customTag.isEqualToString("Stop")){
-                self.simpleButtonDelegate?.didClickOnStopButton()
-            }
-        }
-    }
-    
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if touches.first != nil {
-        }
-    }
-    
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if touches.first != nil {
-        }
+    @IBAction func onClickCross(sender: AnyObject) {
+        peoplePopupDelegate?.didClickOnCross()
+        
     }
 }
+
 
 

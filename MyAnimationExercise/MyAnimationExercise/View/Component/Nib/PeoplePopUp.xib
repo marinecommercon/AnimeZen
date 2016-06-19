@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeoplePopUp" customModule="MyAnimationExercise" customModuleProvider="target">
+            <connections>
+                <outlet property="popupButton" destination="Twl-GA-ek1" id="MGO-9h-Mxl"/>
+                <outlet property="popupLabel" destination="eed-KW-hfn" id="OgS-KK-O2I"/>
+                <outlet property="popupView" destination="sBS-mh-OjZ" id="aZF-qV-mtI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1id-P1-omg">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="66"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBS-mh-OjZ" customClass="PopUpView" customModule="MyAnimationExercise" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="66"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eed-KW-hfn">
+                    <rect key="frame" x="29" y="10" width="242" height="46"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Twl-GA-ek1" userLabel="Popup Button">
+                    <rect key="frame" x="283" y="5" width="12" height="12"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="12" id="4E6-Ey-v9j"/>
+                        <constraint firstAttribute="width" constant="12" id="oaB-AV-ke9"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="ic_cross"/>
+                    <connections>
+                        <action selector="onClickCross:" destination="-1" eventType="touchUpInside" id="qBO-u7-ZvM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="eed-KW-hfn" firstAttribute="top" secondItem="1id-P1-omg" secondAttribute="top" constant="10" id="9Jt-Yk-dQA"/>
+                <constraint firstAttribute="trailing" secondItem="eed-KW-hfn" secondAttribute="trailing" constant="29" id="9a8-d3-yCe"/>
+                <constraint firstAttribute="trailing" secondItem="sBS-mh-OjZ" secondAttribute="trailing" id="K4t-Bd-0Wi"/>
+                <constraint firstAttribute="bottom" secondItem="sBS-mh-OjZ" secondAttribute="bottom" id="LU0-Bk-Cq1"/>
+                <constraint firstAttribute="bottom" secondItem="eed-KW-hfn" secondAttribute="bottom" constant="10" id="UNK-Aw-OiI"/>
+                <constraint firstItem="sBS-mh-OjZ" firstAttribute="top" secondItem="1id-P1-omg" secondAttribute="top" id="auV-fN-jRU"/>
+                <constraint firstItem="sBS-mh-OjZ" firstAttribute="leading" secondItem="1id-P1-omg" secondAttribute="leading" id="glA-rZ-vsJ"/>
+                <constraint firstItem="Twl-GA-ek1" firstAttribute="top" secondItem="1id-P1-omg" secondAttribute="top" constant="5" id="j4k-0l-x5R"/>
+                <constraint firstAttribute="trailing" secondItem="Twl-GA-ek1" secondAttribute="trailing" constant="5" id="koL-ul-kmJ"/>
+                <constraint firstItem="eed-KW-hfn" firstAttribute="leading" secondItem="1id-P1-omg" secondAttribute="leading" constant="29" id="oGQ-Ym-SBx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_cross" width="10" height="10"/>
+    </resources>
+</document>

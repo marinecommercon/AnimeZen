@@ -29,13 +29,15 @@ extension UIImage {
     }
 }
 
-class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonDelegate, CustomPopupDelegate, SharePopupDelegate {
+class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonDelegate, PeoplePopupDelegate, SharePopupDelegate, SimpleButtonDelegate {
 
     var tabBar: UITabBar?
     var ratio : CGFloat = 0.0
     var currentTag = NSString()
     
     var textField = UITextField()
+    
+    //MARK: Outlets Share View
     @IBOutlet weak var shareView: UIScrollView!
     @IBOutlet weak var shareViewTop: NSLayoutConstraint!
     
@@ -49,23 +51,26 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
     @IBOutlet weak var mailButton: CustomButton!
     @IBOutlet weak var moreLabel: UILabel!
     
-    @IBOutlet weak var sharePopupView: SharePopUp!
-    @IBOutlet weak var sharePopupBottom: NSLayoutConstraint!
-    @IBOutlet weak var sharePopupTop: NSLayoutConstraint!
-    
+    //MARK: Outlets Time View
     @IBOutlet weak var timeView: UIView!
     @IBOutlet weak var timeViewTop: NSLayoutConstraint!
     @IBOutlet weak var extendButton: SimpleButton!
     @IBOutlet weak var stopButton: SimpleButton!
     
-    @IBOutlet weak var customPopupView: CustomPopUp!
+    //MARK: Outlets People-PopUp View
+    @IBOutlet weak var peoplePopupView: PeoplePopUp!
     
+    //MARK: Outlets Share-PopUp View
+    @IBOutlet weak var sharePopupView: SharePopUp!
+    @IBOutlet weak var sharePopupBottom: NSLayoutConstraint!
+    @IBOutlet weak var sharePopupTop: NSLayoutConstraint!
+    
+    //MARK: Outlets Position-PopUp View
+    @IBOutlet weak var positionPopupView: PositionPopUp!
     
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-
-  
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,15 +78,15 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         self.shareViewTop.constant = 89
         
     }
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.shareViewTop.constant = 89
         
         // Delegate Popup
-        self.customPopupView.customPopupDelegate = self
+        self.peoplePopupView.peoplePopupDelegate = self
+        self.stopButton.simpleButtonDelegate = self
         
         // Delegate Buttons
         self.messageButton.customButtonDelegate = self
@@ -94,6 +99,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         self.timeView.alpha = 0
         self.extendButton.alpha = 0
         self.stopButton.alpha = 0
+        self.positionPopupView.alpha = 0
         
         // Notifications for Keyboard
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SecondViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
@@ -111,6 +117,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: init TabBar
     
     func initTabBar() {
         let customPinkColor = UIColor(red: 295/255, green: 97/255, blue: 160/255, alpha: 1)
@@ -161,8 +169,10 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
             self.sharePopupBottom.constant = keyboardSize.height - self.tabBar!.frame.height + 5
             self.sharePopupTop.constant = 10
             self.view.layoutIfNeeded()
+            
+            // Enable interaction with the view
+            self.view.userInteractionEnabled = true
         }
-        self.view.userInteractionEnabled = true
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -173,16 +183,24 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         }
     }
     
-    // MARK: CustomPopupDelegate + CustomButtonDelegate
+    // MARK: PeoplePopupDelegate
     
     func didClickOnCross() {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
             
-            self.customPopupView.alpha = 0
+            self.peoplePopupView.alpha = 0
             self.shareViewTop.constant = 10
             self.view.layoutIfNeeded()
             
         }), completion: nil)
+    }
+    
+    // MARK: CustomButtonDelegate
+    
+    func didBeginRectangleAnimation() {
+        
+        // Disable interaction with the view
+        self.view.userInteractionEnabled = false
     }
     
     func didFinishSpinningAnimation(customTag: NSString) {
@@ -190,22 +208,22 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         // Remember the button to re-init later
         self.currentTag = customTag
         
-        self.view.userInteractionEnabled = false
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
 
             self.textField.becomeFirstResponder()
-            
         }), completion: nil)
     }
     
-    func didBeginSpinningAnimation() {
+    func didBeginSpinningAnimation(customTag: NSString) {
         //
     }
+    
+    // MARK: SharePopupDelegate
     
     func didClickOnPost() {
         
         // Hide Custom PopUp
-        self.customPopupView.alpha = 0
+        self.peoplePopupView.alpha = 0
         self.shareViewTop.constant = 10
         self.view.layoutIfNeeded()
         
@@ -214,62 +232,118 @@ class SecondViewController: UIViewController, UITextFieldDelegate, CustomButtonD
         self.shareLabelTop.constant = 0
         
         // Hide Buttons
-        self.messageButton.hidden = true
-        self.whatsappButton.hidden = true
-        self.facebookButton.hidden = true
-        self.twitterButton.hidden = true
-        self.mailButton.hidden = true
-        self.moreLabel.hidden = true
+        self.messageButton.alpha = 0
+        self.whatsappButton.alpha = 0
+        self.facebookButton.alpha = 0
+        self.twitterButton.alpha = 0
+        self.mailButton.alpha = 0
+        self.moreLabel.alpha = 0
         
-        
-        self.view.userInteractionEnabled = true
         UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
             self.textField.endEditing(true)
         }), completion: { (finished: Bool) -> Void in
             
-            self.startTimeAnimation()
+            self.showTimeAnimation()
         })
+    }
+    
+    // MARK: SimpleButtonDelegate
+    
+    func didClickOnStopButton() {
+        
+        // Change label
+        self.shareLabelTop.constant = 0
+        self.shareLabel.text = "Share a link to your position for 45 min"
+        
+        // Hide Buttons
+        self.timeView.alpha = 0
+        self.extendButton.alpha = 0
+        self.stopButton.alpha = 0
+        self.positionPopupView.alpha = 0
+        
+        self.showShareAnimation()
 
     }
     
-    func startTimeAnimation(){
+    // MARK: Animations
+    
+    func showShareAnimation(){
         
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            
+            self.peoplePopupView.alpha = 1
+            self.messageButton.alpha = 1
+            self.whatsappButton.alpha = 1
+            self.facebookButton.alpha = 1
+            self.twitterButton.alpha = 1
+            self.mailButton.alpha = 1
+            self.moreLabel.alpha = 1
+
+            self.shareViewTop.constant = 89
+            self.view.layoutIfNeeded()
+            
+        }), completion: { (finished: Bool) -> Void in
+            self.resetButton()
+        })
+    }
+    
+    func showTimeAnimation(){
+        
+        // Hide Custom PopUp
+        self.peoplePopupView.alpha = 0
         self.timeView.frame.origin.y = 700
         self.extendButton.frame.origin.y = 700
         self.stopButton.frame.origin.y = 700
         
-        UIView.animateWithDuration(0.5, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(0.7, delay: 0.5, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
             
             // Show Time View
             self.timeView.alpha = 1
-            self.timeView.frame.origin.y = 252
+            self.timeView.frame.origin.y = 232
         }) { _ in
             //
         }
         
-        UIView.animateWithDuration(0.5, delay: 0.8, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(0.7, delay: 0.8, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
             
             // Show Time View
             self.extendButton.alpha = 1
-            self.extendButton.frame.origin.y = 344
+            self.extendButton.frame.origin.y = 324
+            self.stopButton.alpha = 1
+            self.stopButton.frame.origin.y = 376
         }) { _ in
             //
         }
         
-        UIView.animateWithDuration(0.5, delay: 1.1, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
+        UIView.animateWithDuration(0.7, delay: 1.3, usingSpringWithDamping: 0.8, initialSpringVelocity: 15, options: .CurveEaseInOut, animations: {
             
             // Show Time View
-            self.stopButton.alpha = 1
-            self.stopButton.frame.origin.y = 396
+            self.positionPopupView.alpha = 1
+            self.positionPopupView.frame.origin.y = 477
         }) { _ in
             //
         }
-
-        
-    
-    
     }
-
+    
+    //MARK: Private functions
+    
+    func resetButton(){
+        
+        switch currentTag {
+        case "Message":
+            self.messageButton.resetToInitalState()
+        case "Whatsapp":
+            self.whatsappButton.resetToInitalState()
+        case "Facebook":
+            self.facebookButton.resetToInitalState()
+        case "Twitter":
+            self.twitterButton.resetToInitalState()
+        case "Mail":
+            self.mailButton.resetToInitalState()
+        default:
+            break
+        }
+    }
 
 
 }

@@ -177,10 +177,11 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Extend by 15 minutes"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Extend"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MY7-kD-UD6" customClass="SimpleButton" customModule="MyAnimationExercise" customModuleProvider="target">
-                                                <rect key="frame" x="10.5" y="403" width="299" height="44"/>
+                                                <rect key="frame" x="10" y="403" width="299" height="44"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="N36-XL-kyU"/>
@@ -188,6 +189,20 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Stop"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Stop"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ap-6s-v10" customClass="PositionPopUp" customModule="MyAnimationExercise" customModuleProvider="target">
+                                                <rect key="frame" x="-6" y="457" width="332" height="86"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="332" id="Hj8-dg-B9c"/>
+                                                    <constraint firstAttribute="height" constant="86" id="nEK-a1-9ZM"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="infoText" value="Your position is shared at"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="positionText" value="https://live.zen.ly/78shs6"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="imagePosition" value="ic_position"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -202,6 +217,7 @@
                                             <constraint firstItem="2Vu-WW-L1X" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="BEO-ua-IfD"/>
                                             <constraint firstItem="exO-FP-FVG" firstAttribute="top" secondItem="LF0-tj-4eL" secondAttribute="bottom" constant="8" id="HTh-8w-1WR"/>
                                             <constraint firstItem="MY7-kD-UD6" firstAttribute="top" secondItem="6p3-iN-eOs" secondAttribute="bottom" constant="8" id="IbN-Eb-YPZ"/>
+                                            <constraint firstItem="6ap-6s-v10" firstAttribute="top" secondItem="MY7-kD-UD6" secondAttribute="bottom" constant="10" id="Jtx-pg-lHG"/>
                                             <constraint firstItem="UlC-rM-cRq" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="Y2E-BO-UgD"/>
                                             <constraint firstItem="JU4-sf-2Ta" firstAttribute="top" secondItem="UlC-rM-cRq" secondAttribute="bottom" constant="23" id="cH6-SR-ACb"/>
                                             <constraint firstItem="iVa-g0-oNs" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="eSE-As-M7E"/>
@@ -230,7 +246,7 @@
                                     <constraint firstAttribute="trailing" secondItem="byo-IY-fXW" secondAttribute="trailing" id="wyi-mS-RCL"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-8d-f4P" userLabel="PopUp View" customClass="CustomPopUp" customModule="MyAnimationExercise" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-8d-f4P" userLabel="PopUp View" customClass="PeoplePopUp" customModule="MyAnimationExercise" customModuleProvider="target">
                                 <rect key="frame" x="10" y="30" width="300" height="66"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -255,6 +271,7 @@
                             <constraint firstItem="qn0-8d-f4P" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="0qC-vL-LPf"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="NtD-9a-dRw" secondAttribute="bottom" id="2tx-B0-jhg"/>
                             <constraint firstItem="NtD-9a-dRw" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="3RM-DH-cnf"/>
+                            <constraint firstItem="6ap-6s-v10" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3fH-hy-WUk"/>
                             <constraint firstItem="byo-IY-fXW" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="43f-gR-L3i"/>
                             <constraint firstItem="qn0-8d-f4P" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="7Ih-v2-UVp"/>
                             <constraint firstItem="6Nb-js-vmQ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" priority="999" constant="700" id="8Ym-Yl-YL3"/>
@@ -270,12 +287,13 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
-                        <outlet property="customPopupView" destination="qn0-8d-f4P" id="R6i-xh-C4S"/>
                         <outlet property="extendButton" destination="6p3-iN-eOs" id="oCF-wl-ttf"/>
                         <outlet property="facebookButton" destination="exO-FP-FVG" id="lxU-tk-Pgp"/>
                         <outlet property="mailButton" destination="2Vu-WW-L1X" id="5gY-pF-ijM"/>
                         <outlet property="messageButton" destination="ojk-Bw-FXx" id="6te-UL-Fxp"/>
                         <outlet property="moreLabel" destination="5NA-GU-eOC" id="dQF-k1-bUa"/>
+                        <outlet property="peoplePopupView" destination="qn0-8d-f4P" id="6vU-rE-GQ0"/>
+                        <outlet property="positionPopupView" destination="6ap-6s-v10" id="kGr-1o-cLd"/>
                         <outlet property="shareLabel" destination="NRf-9m-45o" id="fLK-Su-4eo"/>
                         <outlet property="shareLabelTop" destination="5v0-L6-BFq" id="bgd-Bg-ftn"/>
                         <outlet property="sharePopupBottom" destination="Qsu-f4-A7j" id="jr2-fb-eoF"/>
@@ -315,6 +333,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_position" width="26" height="32"/>
         <image name="ic_time" width="110" height="118"/>
         <image name="share_fb" width="24" height="24"/>
         <image name="share_mail" width="26" height="20"/>

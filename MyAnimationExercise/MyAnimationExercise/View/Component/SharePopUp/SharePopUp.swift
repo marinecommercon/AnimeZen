@@ -17,8 +17,8 @@ protocol SharePopupDelegate {
 @IBDesignable
 class SharePopUp: UIView {
     
-    let rectangleLayer = CALayer()
     var view: UIView!
+    let rectangleLayer = CALayer()
     var sharePopupDelegate: SharePopupDelegate?
     
     // MARK: Init View

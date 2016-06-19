@@ -11,7 +11,8 @@ import UIKit
 // MARK: Protocol
 
 protocol CustomButtonDelegate {
-    func didBeginSpinningAnimation()
+    func didBeginRectangleAnimation()
+    func didBeginSpinningAnimation(customTag: NSString)
     func didFinishSpinningAnimation(customTag: NSString)
 }
 
@@ -88,13 +89,22 @@ protocol CustomButtonDelegate {
         return view
     }
     
+    func resetToInitalState(){
+        self.rectangleView.reverseAnimation()
+        
+        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            self.shareView.alpha = 1
+            }, completion: nil)
+    }
+    
     // MARK: Handle Touches Gesture
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil {
             
-            self.rectangleView.updateAnimation()
             self.spinningView.spinningViewDelegate = self
+            self.rectangleView.updateAnimation()
+            self.customButtonDelegate?.didBeginRectangleAnimation()
             
             UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
                 self.shareView.alpha = 0
@@ -115,7 +125,7 @@ protocol CustomButtonDelegate {
     }
     
     func didBeginSpinningAnimation() {
-        self.customButtonDelegate?.didBeginSpinningAnimation()
+        self.customButtonDelegate?.didBeginSpinningAnimation(self.customTag)
     }
     
     func didFinishSpinningAnimation() {

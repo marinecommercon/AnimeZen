@@ -73,6 +73,29 @@ class RectangleView: UIView {
         rectangleLayer.addAnimation(animation, forKey: "bounds")
     }
     
+    func reverseAnimation(){
+        let offset: CGFloat = self.frame.size.width/2 - 45/2
+        let newFrame = self.rectangleLayer.frame
+        let newOrigin = newFrame.origin
+        
+        let oldSize = CGSize(width: 46, height: 45)
+        let oldOrigin = CGPoint(x: newOrigin.x + offset, y: newOrigin.y)
+        
+        let fromValue = CGRect(origin: oldOrigin, size: oldSize)
+        let toValue = self.rectangleLayer.frame
+        
+        let animation = CABasicAnimation(keyPath: "bounds")
+        animation.delegate = self
+        animation.fromValue = NSValue(CGRect: fromValue)
+        animation.toValue = NSValue(CGRect: toValue)
+        animation.duration = 0.4
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.fillMode = kCAFillModeForwards;
+        animation.removedOnCompletion = false
+        
+        rectangleLayer.addAnimation(animation, forKey: "bounds")
+    }
+    
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         if(flag){
             rectangleViewDelegate?.didFinishRectangleAnimation()

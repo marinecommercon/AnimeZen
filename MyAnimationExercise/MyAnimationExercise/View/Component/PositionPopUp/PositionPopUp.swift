@@ -1,5 +1,5 @@
 //
-//  CustomPopUp.swift
+//  PositionPopUp.swift
 //  MyAnimationExercise
 //
 //  Created by Technique on 19/06/2016.
@@ -8,29 +8,36 @@
 
 import UIKit
 
-// MARK: Protocol
-
-protocol CustomPopupDelegate {
-    func didClickOnCross()
-}
-
-@IBDesignable class CustomPopUp: UIView {
+@IBDesignable class PositionPopUp: UIView {
     
-   
     // The custom view from the XIB file
     var view: UIView!
-    var customPopupDelegate: CustomPopupDelegate?
+    let rectangleLayer = CALayer()
     
-    @IBOutlet weak var popupLabel: UILabel!
-    @IBOutlet weak var popupView: PopUpView!
-    @IBOutlet weak var popupButton: UIButton!
+    // Outlets
+    @IBOutlet weak var rectangleView: UIView!
+    @IBOutlet weak var firstLabel: UILabel!
+    @IBOutlet weak var secondLabel: UILabel!
+    @IBOutlet weak var positionImageView: UIImageView!
     
     // MARK: Set Properties
     
     // Dynamic properties for the view
-    @IBInspectable var labelText: String = "" {
+    @IBInspectable var infoText: String! {
         didSet {
-            self.popupLabel.text = labelText
+            self.firstLabel.text = infoText
+        }
+    }
+    
+    @IBInspectable var positionText: String! {
+        didSet {
+            self.secondLabel.text = positionText
+        }
+    }
+    
+    @IBInspectable var imagePosition: UIImage! {
+        didSet {
+            self.positionImageView.image = imagePosition
         }
     }
     
@@ -38,14 +45,10 @@ protocol CustomPopupDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         xibSetup()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        // Setup for property
-        
-        
         // Call super.init(coder:)
         super.init(coder: aDecoder)
         
@@ -62,23 +65,23 @@ protocol CustomPopupDelegate {
         // The view must stretch with containing view
         view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         
+        // Custom rectangleLayer
+        rectangleLayer.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).CGColor
+        rectangleLayer.frame.size.width = 332
+        rectangleLayer.frame.size.height = 86
+        rectangleLayer.cornerRadius = 10
+        rectangleView.layer.addSublayer(rectangleLayer)
+
         // Adding custom subview on top of the view
         addSubview(view)
     }
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "CustomPopUp", bundle: bundle)
+        let nib = UINib(nibName: "PositionPopUp", bundle: bundle)
         
         // AUIView is top level and the only object in nib
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         return view
     }
-    
-    @IBAction func onClickCross(sender: AnyObject) {
-        customPopupDelegate?.didClickOnCross()
-        
-    }
 }
-
-

@@ -11,7 +11,6 @@
 		78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C7E1D155D3E00FC01FC /* CustomButton.swift */; };
 		78363C811D155D5100FC01FC /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C801D155D5100FC01FC /* RectangleView.swift */; };
 		78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C821D155D5D00FC01FC /* SpinningView.swift */; };
-		78363C8A1D15F10200FC01FC /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78363C891D15F10200FC01FC /* PopUpView.swift */; };
 		783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED16F1D1529A60005C90D /* AppDelegate.swift */; };
 		783ED1791D1529A60005C90D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1781D1529A60005C90D /* Assets.xcassets */; };
 		783ED1871D1529A60005C90D /* MyAnimationExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED1861D1529A60005C90D /* MyAnimationExerciseTests.swift */; };
@@ -23,8 +22,11 @@
 		786F9DB61D16C7A50087DE4C /* SharePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DB51D16C7A50087DE4C /* SharePopUp.swift */; };
 		786F9DBC1D16FD1C0087DE4C /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DBB1D16FD1C0087DE4C /* SimpleButton.swift */; };
 		786F9DBE1D16FD300087DE4C /* SimpleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786F9DBD1D16FD300087DE4C /* SimpleButton.xib */; };
-		789394A11D168E55001951BE /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789394A01D168E55001951BE /* CustomPopUp.xib */; };
-		789394A31D168E7E001951BE /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789394A21D168E7E001951BE /* CustomPopUp.swift */; };
+		786F9DC11D17018C0087DE4C /* PositionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DC01D17018C0087DE4C /* PositionPopUp.swift */; };
+		786F9DC31D1701970087DE4C /* PositionPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786F9DC21D1701970087DE4C /* PositionPopUp.xib */; };
+		786F9DC81D172F6A0087DE4C /* PeoplePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DC71D172F6A0087DE4C /* PeoplePopUp.swift */; };
+		786F9DCA1D172FB00087DE4C /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DC91D172FB00087DE4C /* PopUpView.swift */; };
+		786F9DCC1D172FDA0087DE4C /* PeoplePopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786F9DCB1D172FDA0087DE4C /* PeoplePopUp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +51,6 @@
 		78363C7E1D155D3E00FC01FC /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		78363C801D155D5100FC01FC /* RectangleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		78363C821D155D5D00FC01FC /* SpinningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinningView.swift; sourceTree = "<group>"; };
-		78363C891D15F10200FC01FC /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		783ED16C1D1529A60005C90D /* MyAnimationExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAnimationExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783ED16F1D1529A60005C90D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		783ED1781D1529A60005C90D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,8 +68,11 @@
 		786F9DB51D16C7A50087DE4C /* SharePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePopUp.swift; sourceTree = "<group>"; };
 		786F9DBB1D16FD1C0087DE4C /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 		786F9DBD1D16FD300087DE4C /* SimpleButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleButton.xib; sourceTree = "<group>"; };
-		789394A01D168E55001951BE /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
-		789394A21D168E7E001951BE /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
+		786F9DC01D17018C0087DE4C /* PositionPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionPopUp.swift; sourceTree = "<group>"; };
+		786F9DC21D1701970087DE4C /* PositionPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PositionPopUp.xib; sourceTree = "<group>"; };
+		786F9DC71D172F6A0087DE4C /* PeoplePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeoplePopUp.swift; sourceTree = "<group>"; };
+		786F9DC91D172FB00087DE4C /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		786F9DCB1D172FDA0087DE4C /* PeoplePopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeoplePopUp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,15 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78363C881D15F0F400FC01FC /* PopUp */ = {
-			isa = PBXGroup;
-			children = (
-				789394A21D168E7E001951BE /* CustomPopUp.swift */,
-				78363C891D15F10200FC01FC /* PopUpView.swift */,
-			);
-			path = PopUp;
-			sourceTree = "<group>";
-		};
 		783ED1631D1529A60005C90D = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +162,9 @@
 		783ED1A21D155B2C0005C90D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				786F9DC41D172F360087DE4C /* PeoplePopUp */,
+				786F9DBF1D1701790087DE4C /* PositionPopUp */,
 				786F9DB41D16C79C0087DE4C /* SharePopUp */,
-				78363C881D15F0F400FC01FC /* PopUp */,
 				783ED1A31D155B2C0005C90D /* CustomButton */,
 				783ED1A41D155B2C0005C90D /* Nib */,
 			);
@@ -191,7 +187,8 @@
 			children = (
 				786F9DBD1D16FD300087DE4C /* SimpleButton.xib */,
 				78363C7C1D155D2E00FC01FC /* CustomButton.xib */,
-				789394A01D168E55001951BE /* CustomPopUp.xib */,
+				786F9DC21D1701970087DE4C /* PositionPopUp.xib */,
+				786F9DCB1D172FDA0087DE4C /* PeoplePopUp.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -220,6 +217,23 @@
 				786F9DB51D16C7A50087DE4C /* SharePopUp.swift */,
 			);
 			path = SharePopUp;
+			sourceTree = "<group>";
+		};
+		786F9DBF1D1701790087DE4C /* PositionPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				786F9DC01D17018C0087DE4C /* PositionPopUp.swift */,
+			);
+			path = PositionPopUp;
+			sourceTree = "<group>";
+		};
+		786F9DC41D172F360087DE4C /* PeoplePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				786F9DC71D172F6A0087DE4C /* PeoplePopUp.swift */,
+				786F9DC91D172FB00087DE4C /* PopUpView.swift */,
+			);
+			path = PeoplePopUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,11 +340,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786F9DC31D1701970087DE4C /* PositionPopUp.xib in Resources */,
+				786F9DCC1D172FDA0087DE4C /* PeoplePopUp.xib in Resources */,
 				78363C7D1D155D2E00FC01FC /* CustomButton.xib in Resources */,
 				783ED1AF1D155B2C0005C90D /* Main.storyboard in Resources */,
 				783ED1791D1529A60005C90D /* Assets.xcassets in Resources */,
 				783ED1AE1D155B2C0005C90D /* LaunchScreen.storyboard in Resources */,
-				789394A11D168E55001951BE /* CustomPopUp.xib in Resources */,
 				786F9DBE1D16FD300087DE4C /* SimpleButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,15 +371,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78363C8A1D15F10200FC01FC /* PopUpView.swift in Sources */,
+				786F9DCA1D172FB00087DE4C /* PopUpView.swift in Sources */,
 				78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */,
 				783ED1AD1D155B2C0005C90D /* SecondViewController.swift in Sources */,
 				786F9DB61D16C7A50087DE4C /* SharePopUp.swift in Sources */,
-				789394A31D168E7E001951BE /* CustomPopUp.swift in Sources */,
 				78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */,
 				783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */,
 				783ED1AC1D155B2C0005C90D /* FirstViewController.swift in Sources */,
 				78363C811D155D5100FC01FC /* RectangleView.swift in Sources */,
+				786F9DC81D172F6A0087DE4C /* PeoplePopUp.swift in Sources */,
+				786F9DC11D17018C0087DE4C /* PositionPopUp.swift in Sources */,
 				786F9DBC1D16FD1C0087DE4C /* SimpleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
