@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SimpleButton" customModule="MyAnimationExercise" customModuleProvider="target">
+            <connections>
+                <outlet property="simpleLabel" destination="mAH-JK-EIl" id="tKT-bz-0bP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Xgz-rn-sRR">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLn-O4-q9h" userLabel="RectangleView" customClass="RectangleView" customModule="MyAnimationExercise" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whatsapp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAH-JK-EIl">
+                    <rect key="frame" x="0.0" y="10" width="300" height="25"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="MLn-O4-q9h" firstAttribute="leading" secondItem="Xgz-rn-sRR" secondAttribute="leading" id="14d-5k-TQb"/>
+                <constraint firstItem="mAH-JK-EIl" firstAttribute="top" secondItem="Xgz-rn-sRR" secondAttribute="top" constant="10" id="6TF-eo-s5p"/>
+                <constraint firstAttribute="bottom" secondItem="MLn-O4-q9h" secondAttribute="bottom" id="Bwg-gG-WbE"/>
+                <constraint firstAttribute="trailing" secondItem="MLn-O4-q9h" secondAttribute="trailing" id="CmP-ve-fSN"/>
+                <constraint firstItem="MLn-O4-q9h" firstAttribute="top" secondItem="Xgz-rn-sRR" secondAttribute="top" id="UK5-nm-fBh"/>
+                <constraint firstAttribute="bottom" secondItem="mAH-JK-EIl" secondAttribute="bottom" constant="10" id="aQg-gy-3Hm"/>
+                <constraint firstItem="mAH-JK-EIl" firstAttribute="leading" secondItem="Xgz-rn-sRR" secondAttribute="leading" id="jBR-wH-k53"/>
+                <constraint firstAttribute="trailing" secondItem="mAH-JK-EIl" secondAttribute="trailing" id="xnJ-rX-TBO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="190" y="98"/>
+        </view>
+    </objects>
+</document>

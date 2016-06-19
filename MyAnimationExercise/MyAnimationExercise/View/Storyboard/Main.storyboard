@@ -42,7 +42,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtD-9a-dRw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NtD-9a-dRw" userLabel="Share View">
                                 <rect key="frame" x="0.0" y="30" width="320" height="521"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byo-IY-fXW">
@@ -76,6 +76,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Message"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageSource" value="share_msg"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Message"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LF0-tj-4eL" customClass="CustomButton" customModule="MyAnimationExercise" customModuleProvider="target">
@@ -88,6 +89,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Whatsapp"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageSource" value="share_wa"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Whatsapp"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exO-FP-FVG" customClass="CustomButton" customModule="MyAnimationExercise" customModuleProvider="target">
@@ -100,6 +102,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Facebook"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageSource" value="share_fb"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Facebook"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVa-g0-oNs" customClass="CustomButton" customModule="MyAnimationExercise" customModuleProvider="target">
@@ -112,6 +115,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Twitter"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageSource" value="share_tw"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Twitter"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vu-WW-L1X" customClass="CustomButton" customModule="MyAnimationExercise" customModuleProvider="target">
@@ -124,6 +128,7 @@
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="E-mail"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="imageSource" value="share_mail"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="buttonTag" value="Mail"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... More" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NA-GU-eOC">
@@ -135,6 +140,56 @@
                                                 <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JU4-sf-2Ta" userLabel="Time View">
+                                                <rect key="frame" x="97" y="226" width="126" height="92"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yid-fY-wzg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="126" height="21"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                        <color key="textColor" red="0.0" green="0.37254901959999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:60:34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTd-88-dGP">
+                                                        <rect key="frame" x="0.0" y="21" width="126" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="NTd-88-dGP" firstAttribute="leading" secondItem="JU4-sf-2Ta" secondAttribute="leading" id="CSm-WV-ceI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yid-fY-wzg" secondAttribute="trailing" id="FHF-wh-Uzq"/>
+                                                    <constraint firstAttribute="height" constant="92" id="Zzw-Cz-KvC"/>
+                                                    <constraint firstItem="yid-fY-wzg" firstAttribute="top" secondItem="JU4-sf-2Ta" secondAttribute="top" id="cKD-8g-BJp"/>
+                                                    <constraint firstItem="yid-fY-wzg" firstAttribute="leading" secondItem="JU4-sf-2Ta" secondAttribute="leading" id="hmP-WR-GT9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NTd-88-dGP" secondAttribute="trailing" id="mCl-BN-WjR"/>
+                                                    <constraint firstAttribute="width" constant="126" id="ou8-33-eBr"/>
+                                                    <constraint firstItem="NTd-88-dGP" firstAttribute="top" secondItem="yid-fY-wzg" secondAttribute="bottom" id="pkz-Su-a4W"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6p3-iN-eOs" customClass="SimpleButton" customModule="MyAnimationExercise" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="351" width="299" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="299" id="M0I-h7-M3k"/>
+                                                    <constraint firstAttribute="height" constant="44" id="NOG-mM-Zoy"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Extend by 15 minutes"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MY7-kD-UD6" customClass="SimpleButton" customModule="MyAnimationExercise" customModuleProvider="target">
+                                                <rect key="frame" x="10.5" y="403" width="299" height="44"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="N36-XL-kyU"/>
+                                                    <constraint firstAttribute="width" constant="299" id="qbB-o9-IGo"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Stop"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0093171742259987606" green="0.78513344302781196" blue="0.97756881598793366" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -143,9 +198,12 @@
                                             <constraint firstItem="LF0-tj-4eL" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="1Jm-8u-Gz3"/>
                                             <constraint firstItem="5NA-GU-eOC" firstAttribute="top" secondItem="2Vu-WW-L1X" secondAttribute="bottom" constant="8" id="3ft-Tq-7x8"/>
                                             <constraint firstItem="NRf-9m-45o" firstAttribute="top" secondItem="byo-IY-fXW" secondAttribute="top" id="5v0-L6-BFq"/>
+                                            <constraint firstItem="6p3-iN-eOs" firstAttribute="top" secondItem="JU4-sf-2Ta" secondAttribute="bottom" constant="33" id="8Jz-6H-1Uu"/>
                                             <constraint firstItem="2Vu-WW-L1X" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="BEO-ua-IfD"/>
                                             <constraint firstItem="exO-FP-FVG" firstAttribute="top" secondItem="LF0-tj-4eL" secondAttribute="bottom" constant="8" id="HTh-8w-1WR"/>
+                                            <constraint firstItem="MY7-kD-UD6" firstAttribute="top" secondItem="6p3-iN-eOs" secondAttribute="bottom" constant="8" id="IbN-Eb-YPZ"/>
                                             <constraint firstItem="UlC-rM-cRq" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="Y2E-BO-UgD"/>
+                                            <constraint firstItem="JU4-sf-2Ta" firstAttribute="top" secondItem="UlC-rM-cRq" secondAttribute="bottom" constant="23" id="cH6-SR-ACb"/>
                                             <constraint firstItem="iVa-g0-oNs" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="eSE-As-M7E"/>
                                             <constraint firstAttribute="height" constant="600" id="hIF-pp-IOv"/>
                                             <constraint firstItem="ojk-Bw-FXx" firstAttribute="top" secondItem="UlC-rM-cRq" secondAttribute="bottom" constant="25" id="ify-mB-VoB"/>
@@ -154,8 +212,14 @@
                                             <constraint firstItem="ojk-Bw-FXx" firstAttribute="centerX" secondItem="byo-IY-fXW" secondAttribute="centerX" id="kRv-mM-fD7"/>
                                             <constraint firstItem="UlC-rM-cRq" firstAttribute="top" secondItem="NRf-9m-45o" secondAttribute="bottom" constant="13" id="pY4-7e-Elk"/>
                                             <constraint firstItem="2Vu-WW-L1X" firstAttribute="top" secondItem="iVa-g0-oNs" secondAttribute="bottom" constant="8" id="rNt-ni-gwn"/>
+                                            <constraint firstItem="6p3-iN-eOs" firstAttribute="top" secondItem="MY7-kD-UD6" secondAttribute="bottom" constant="8" id="uEL-5L-UF1"/>
                                             <constraint firstItem="LF0-tj-4eL" firstAttribute="top" secondItem="ojk-Bw-FXx" secondAttribute="bottom" constant="8" id="zI5-Ka-YtA"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="uEL-5L-UF1"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0093171742259999992" green="0.78513344299999999" blue="0.97756881600000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,9 +257,12 @@
                             <constraint firstItem="NtD-9a-dRw" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="3RM-DH-cnf"/>
                             <constraint firstItem="byo-IY-fXW" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="43f-gR-L3i"/>
                             <constraint firstItem="qn0-8d-f4P" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="7Ih-v2-UVp"/>
-                            <constraint firstItem="6Nb-js-vmQ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="700" id="8Ym-Yl-YL3"/>
+                            <constraint firstItem="6Nb-js-vmQ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" priority="999" constant="700" id="8Ym-Yl-YL3"/>
+                            <constraint firstItem="6p3-iN-eOs" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="9pM-ae-rud"/>
+                            <constraint firstItem="MY7-kD-UD6" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Enh-DW-IDF"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="6Nb-js-vmQ" secondAttribute="bottom" constant="-200" id="Qsu-f4-A7j"/>
                             <constraint firstItem="6Nb-js-vmQ" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="UeY-qg-R4E"/>
+                            <constraint firstItem="JU4-sf-2Ta" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="aIZ-US-RDo"/>
                             <constraint firstItem="NtD-9a-dRw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="zYK-Wb-RTx"/>
                         </constraints>
                     </view>
@@ -203,15 +270,22 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
-                        <outlet property="constraintY" destination="3RM-DH-cnf" id="8mx-kO-RUr"/>
                         <outlet property="customPopupView" destination="qn0-8d-f4P" id="R6i-xh-C4S"/>
+                        <outlet property="extendButton" destination="6p3-iN-eOs" id="oCF-wl-ttf"/>
                         <outlet property="facebookButton" destination="exO-FP-FVG" id="lxU-tk-Pgp"/>
                         <outlet property="mailButton" destination="2Vu-WW-L1X" id="5gY-pF-ijM"/>
-                        <outlet property="mainView" destination="NtD-9a-dRw" id="aoT-2w-fzb"/>
                         <outlet property="messageButton" destination="ojk-Bw-FXx" id="6te-UL-Fxp"/>
+                        <outlet property="moreLabel" destination="5NA-GU-eOC" id="dQF-k1-bUa"/>
+                        <outlet property="shareLabel" destination="NRf-9m-45o" id="fLK-Su-4eo"/>
+                        <outlet property="shareLabelTop" destination="5v0-L6-BFq" id="bgd-Bg-ftn"/>
                         <outlet property="sharePopupBottom" destination="Qsu-f4-A7j" id="jr2-fb-eoF"/>
                         <outlet property="sharePopupTop" destination="8Ym-Yl-YL3" id="0aQ-6X-xyR"/>
                         <outlet property="sharePopupView" destination="6Nb-js-vmQ" id="pNd-TC-84W"/>
+                        <outlet property="shareView" destination="NtD-9a-dRw" id="XnV-x1-Jce"/>
+                        <outlet property="shareViewTop" destination="3RM-DH-cnf" id="znJ-AZ-o7V"/>
+                        <outlet property="stopButton" destination="MY7-kD-UD6" id="nfd-o4-baw"/>
+                        <outlet property="timeView" destination="JU4-sf-2Ta" id="HHq-ec-VYC"/>
+                        <outlet property="timeViewTop" destination="cH6-SR-ACb" id="Xoe-W9-Wmf"/>
                         <outlet property="twitterButton" destination="iVa-g0-oNs" id="sdM-YI-JYH"/>
                         <outlet property="whatsappButton" destination="LF0-tj-4eL" id="37f-1u-WfL"/>
                     </connections>

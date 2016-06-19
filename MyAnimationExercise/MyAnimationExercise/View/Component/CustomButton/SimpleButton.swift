@@ -1,53 +1,28 @@
 //
-//  CustomButton.swift
+//  SimpleButton.swift
 //  MyAnimationExercise
 //
-//  Created by Technique on 18/06/2016.
+//  Created by Technique on 19/06/2016.
 //  Copyright © 2016 Marine Commerçon. All rights reserved.
 //
 
 import UIKit
 
-// MARK: Protocol
-
-protocol CustomButtonDelegate {
-    func didBeginSpinningAnimation()
-    func didFinishSpinningAnimation(customTag: NSString)
-}
-
-@IBDesignable class CustomButton: UIView, SpinningViewDelegate {
+@IBDesignable class SimpleButton: UIView {
     
     // The custom view from the XIB file
     var view: UIView!
-    var customButtonDelegate: CustomButtonDelegate?
-    var customTag: NSString!
+
     
     // Outlets
-    @IBOutlet weak var rectangleView: RectangleView!
-    @IBOutlet weak var spinningView: SpinningView!
-    
-    @IBOutlet weak var shareView: UIView!
-    @IBOutlet weak var shareImageView: UIImageView!
-    @IBOutlet weak var shareLabel: UILabel!
+    @IBOutlet weak var simpleLabel: UILabel!
     
     // MARK: Set Properties
     
     // Dynamic properties for the view
     @IBInspectable var labelText: String! {
         didSet {
-            self.shareLabel.text = labelText
-        }
-    }
-    
-    @IBInspectable var imageSource: UIImage! {
-        didSet {
-            self.shareImageView.image = imageSource
-        }
-    }
-    
-    @IBInspectable var buttonTag: NSString! {
-        didSet {
-            self.customTag = buttonTag
+            self.simpleLabel.text = labelText
         }
     }
     
@@ -81,7 +56,7 @@ protocol CustomButtonDelegate {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "CustomButton", bundle: bundle)
+        let nib = UINib(nibName: "SimpleButton", bundle: bundle)
         
         // AUIView is top level and the only object in nib
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
@@ -92,15 +67,7 @@ protocol CustomButtonDelegate {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil {
-            
-            self.rectangleView.updateAnimation()
-            self.spinningView.spinningViewDelegate = self
-            
-            UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
-                self.shareView.alpha = 0
-                }, completion: { (finished: Bool) -> Void in
-                    self.spinningView.updateAnimation()
-            })
+        
         }
     }
     
@@ -112,14 +79,6 @@ protocol CustomButtonDelegate {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil {
         }
-    }
-    
-    func didBeginSpinningAnimation() {
-        self.customButtonDelegate?.didBeginSpinningAnimation()
-    }
-    
-    func didFinishSpinningAnimation() {
-        self.customButtonDelegate?.didFinishSpinningAnimation(self.customTag)
     }
 }
 

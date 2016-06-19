@@ -21,6 +21,8 @@
 		783ED1AE1D155B2C0005C90D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1A91D155B2C0005C90D /* LaunchScreen.storyboard */; };
 		783ED1AF1D155B2C0005C90D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1AB1D155B2C0005C90D /* Main.storyboard */; };
 		786F9DB61D16C7A50087DE4C /* SharePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DB51D16C7A50087DE4C /* SharePopUp.swift */; };
+		786F9DBC1D16FD1C0087DE4C /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DBB1D16FD1C0087DE4C /* SimpleButton.swift */; };
+		786F9DBE1D16FD300087DE4C /* SimpleButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786F9DBD1D16FD300087DE4C /* SimpleButton.xib */; };
 		789394A11D168E55001951BE /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789394A01D168E55001951BE /* CustomPopUp.xib */; };
 		789394A31D168E7E001951BE /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789394A21D168E7E001951BE /* CustomPopUp.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		783ED1AA1D155B2C0005C90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783ED1AB1D155B2C0005C90D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		786F9DB51D16C7A50087DE4C /* SharePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePopUp.swift; sourceTree = "<group>"; };
+		786F9DBB1D16FD1C0087DE4C /* SimpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
+		786F9DBD1D16FD300087DE4C /* SimpleButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleButton.xib; sourceTree = "<group>"; };
 		789394A01D168E55001951BE /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		789394A21D168E7E001951BE /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +178,7 @@
 		783ED1A31D155B2C0005C90D /* CustomButton */ = {
 			isa = PBXGroup;
 			children = (
+				786F9DBB1D16FD1C0087DE4C /* SimpleButton.swift */,
 				78363C7E1D155D3E00FC01FC /* CustomButton.swift */,
 				78363C801D155D5100FC01FC /* RectangleView.swift */,
 				78363C821D155D5D00FC01FC /* SpinningView.swift */,
@@ -184,6 +189,7 @@
 		783ED1A41D155B2C0005C90D /* Nib */ = {
 			isa = PBXGroup;
 			children = (
+				786F9DBD1D16FD300087DE4C /* SimpleButton.xib */,
 				78363C7C1D155D2E00FC01FC /* CustomButton.xib */,
 				789394A01D168E55001951BE /* CustomPopUp.xib */,
 			);
@@ -325,6 +331,7 @@
 				783ED1791D1529A60005C90D /* Assets.xcassets in Resources */,
 				783ED1AE1D155B2C0005C90D /* LaunchScreen.storyboard in Resources */,
 				789394A11D168E55001951BE /* CustomPopUp.xib in Resources */,
+				786F9DBE1D16FD300087DE4C /* SimpleButton.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +365,7 @@
 				783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */,
 				783ED1AC1D155B2C0005C90D /* FirstViewController.swift in Sources */,
 				78363C811D155D5100FC01FC /* RectangleView.swift in Sources */,
+				786F9DBC1D16FD1C0087DE4C /* SimpleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
