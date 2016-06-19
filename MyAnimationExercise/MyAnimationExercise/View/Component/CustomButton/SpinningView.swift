@@ -12,6 +12,7 @@ import UIKit
 
 protocol SpinningViewDelegate {
     func didFinishSpinningAnimation()
+    func didBeginSpinningAnimation()
 }
 
 @IBDesignable
@@ -57,7 +58,7 @@ class SpinningView: UIView {
         let radius = min(bounds.width, bounds.height)/2 - circleLayer.lineWidth/2
         
         let startAngle = CGFloat(-M_PI)
-        let endAngle = startAngle + CGFloat(M_PI*4)
+        let endAngle = startAngle + CGFloat(M_PI)
         let path = UIBezierPath(arcCenter: CGPointZero, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
         
         circleLayer.position = center
@@ -70,11 +71,11 @@ class SpinningView: UIView {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 1.2
+        animation.duration = 0.3
         
         let group = CAAnimationGroup()
         group.repeatCount = 1
-        group.duration = 1.2
+        group.duration = 0.3
         group.animations = [animation]
         
         return group
@@ -85,11 +86,11 @@ class SpinningView: UIView {
         animation.beginTime = 0.05
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 1.25
+        animation.duration = 0.35
         
         let group = CAAnimationGroup()
         group.repeatCount = 1
-        group.duration = 1.25
+        group.duration = 0.35
         group.animations = [animation]
         
         return group
@@ -112,6 +113,7 @@ class SpinningView: UIView {
         circleLayer.addAnimation(strokeEndAnimation, forKey: "strokeEnd")
         circleLayer.addAnimation(strokeStartAnimation, forKey: "strokeStart")
         CATransaction.commit()
+        spinningViewDelegate?.didBeginSpinningAnimation()
     }
     
     override func animationDidStop(anim: CAAnimation, finished flag: Bool) {

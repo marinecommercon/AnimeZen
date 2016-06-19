@@ -11,11 +11,11 @@ import UIKit
 // MARK: Protocol
 
 protocol CustomButtonDelegate {
-    func didBeginAnimation()
-    func didFinishAnimation()
+    func didBeginSpinningAnimation()
+    func didFinishSpinningAnimation()
 }
 
-@IBDesignable class CustomButton: UIView, RectangleViewDelegate, SpinningViewDelegate {
+@IBDesignable class CustomButton: UIView, SpinningViewDelegate {
     
     // The custom view from the XIB file
     var view: UIView!
@@ -86,16 +86,13 @@ protocol CustomButtonDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if touches.first != nil {
             
-            self.rectangleView.rectangleViewDelegate = self
+            self.rectangleView.updateAnimation()
             self.spinningView.spinningViewDelegate = self
             
-            self.rectangleView.updateAnimation()
-            self.customButtonDelegate?.didBeginAnimation()
-            
-            UIView.animateWithDuration(0.7, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
+            UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: { () -> Void in
                 self.shareView.alpha = 0
                 }, completion: { (finished: Bool) -> Void in
-                    
+                    self.spinningView.updateAnimation()
             })
         }
     }
@@ -110,16 +107,13 @@ protocol CustomButtonDelegate {
         }
     }
     
-    // MARK: Custom Delegate
-    
-    func didFinishRectangleAnimation() {
-        self.spinningView.updateAnimation()
+    func didBeginSpinningAnimation() {
+        self.customButtonDelegate?.didBeginSpinningAnimation()
     }
     
     func didFinishSpinningAnimation() {
-        customButtonDelegate?.didFinishAnimation()
+        self.customButtonDelegate?.didFinishSpinningAnimation()
     }
-    
 }
 
 

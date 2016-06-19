@@ -167,15 +167,22 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-8d-f4P" userLabel="PopUp View" customClass="CustomPopUp" customModule="MyAnimationExercise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="30" width="320" height="66"/>
+                                <rect key="frame" x="10" y="30" width="300" height="66"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Cz8-vx-7vq"/>
+                                    <constraint firstAttribute="width" constant="300" id="Cz8-vx-7vq"/>
                                     <constraint firstAttribute="height" constant="66" id="b1R-DM-fXA"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="Also works for people who don’t have Zenly!"/>
                                 </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Nb-js-vmQ" customClass="SharePopUp" customModule="MyAnimationExercise" customModuleProvider="target">
+                                <rect key="frame" x="10" y="720" width="300" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="TcR-hf-q7s"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0093171742259999992" green="0.78513344299999999" blue="0.97756881600000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -186,6 +193,9 @@
                             <constraint firstItem="NtD-9a-dRw" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="3RM-DH-cnf"/>
                             <constraint firstItem="byo-IY-fXW" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="width" id="43f-gR-L3i"/>
                             <constraint firstItem="qn0-8d-f4P" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="10" id="7Ih-v2-UVp"/>
+                            <constraint firstItem="6Nb-js-vmQ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="700" id="8Ym-Yl-YL3"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="6Nb-js-vmQ" secondAttribute="bottom" constant="-200" id="Qsu-f4-A7j"/>
+                            <constraint firstItem="6Nb-js-vmQ" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="UeY-qg-R4E"/>
                             <constraint firstItem="NtD-9a-dRw" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="zYK-Wb-RTx"/>
                         </constraints>
                     </view>
@@ -199,6 +209,9 @@
                         <outlet property="mailButton" destination="2Vu-WW-L1X" id="5gY-pF-ijM"/>
                         <outlet property="mainView" destination="NtD-9a-dRw" id="aoT-2w-fzb"/>
                         <outlet property="messageButton" destination="ojk-Bw-FXx" id="6te-UL-Fxp"/>
+                        <outlet property="sharePopupBottom" destination="Qsu-f4-A7j" id="jr2-fb-eoF"/>
+                        <outlet property="sharePopupTop" destination="8Ym-Yl-YL3" id="0aQ-6X-xyR"/>
+                        <outlet property="sharePopupView" destination="6Nb-js-vmQ" id="pNd-TC-84W"/>
                         <outlet property="twitterButton" destination="iVa-g0-oNs" id="sdM-YI-JYH"/>
                         <outlet property="whatsappButton" destination="LF0-tj-4eL" id="37f-1u-WfL"/>
                     </connections>

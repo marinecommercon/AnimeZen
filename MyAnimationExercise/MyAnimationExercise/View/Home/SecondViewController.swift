@@ -29,10 +29,11 @@ extension UIImage {
     }
 }
 
-class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupDelegate {
+class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupDelegate, SharePopupDelegate {
 
     var tabBar: UITabBar?
     var ratio : CGFloat = 0.0
+    let textView = UITextView()
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var messageButton: CustomButton!
@@ -40,6 +41,10 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
     @IBOutlet weak var facebookButton: CustomButton!
     @IBOutlet weak var twitterButton: CustomButton!
     @IBOutlet weak var mailButton: CustomButton!
+    
+    @IBOutlet weak var sharePopupView: SharePopUp!
+    @IBOutlet weak var sharePopupBottom: NSLayoutConstraint!
+    @IBOutlet weak var sharePopupTop: NSLayoutConstraint!
     
     @IBOutlet weak var constraintY: NSLayoutConstraint!
     @IBOutlet weak var customPopupView: CustomPopUp!
@@ -72,7 +77,15 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
         self.twitterButton.customButtonDelegate = self
         self.mailButton.customButtonDelegate = self
         
+        // Notifications for Keyboard
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SecondViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SecondViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        
+        // Control Keyboard with textview
+        self.view.addSubview(textView)
+        
         initTabBar()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +125,37 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
         return newImage
     }
     
+    // MARK: Keyboard
+    
+    func keyboardWillShow(notification: NSNotification) {
+        
+        self.sharePopupView.sharePopupDelegate = self
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            
+            let screenHeight = UIScreen.mainScreen().bounds.height
+            let statusbarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+            
+            let height = screenHeight - keyboardSize.height - statusbarHeight - 15
+            self.sharePopupView.updateSize(height)
+            
+            self.sharePopupBottom.constant = keyboardSize.height - self.tabBar!.frame.height + 5
+            self.sharePopupTop.constant = 10
+            self.view.layoutIfNeeded()
+        }
+        self.view.userInteractionEnabled = true
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue()) != nil {
+            self.sharePopupBottom.constant = -200
+            self.sharePopupTop.constant = 700
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK: CustomPopupDelegate + CustomButtonDelegate
+    
     func didClickOnCross() {
         UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
             
@@ -122,13 +166,29 @@ class SecondViewController: UIViewController, CustomButtonDelegate, CustomPopupD
         }), completion: nil)
     }
     
-    func didFinishAnimation() {
+    func didFinishSpinningAnimation() {
+        self.view.userInteractionEnabled = false
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+
+            self.textView.becomeFirstResponder()
+            
+        }), completion: nil)
+    }
+    
+    func didBeginSpinningAnimation() {
+        //
+    }
+    
+    func didClickOnPost() {
         self.view.userInteractionEnabled = true
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: ({
+            
+            self.textView.endEditing(true)
+            
+        }), completion: nil)
+
     }
 
-    func didBeginAnimation() {
-        self.view.userInteractionEnabled = false
-    }
 
 
 }

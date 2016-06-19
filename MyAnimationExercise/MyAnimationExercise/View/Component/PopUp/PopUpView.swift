@@ -35,7 +35,7 @@ import UIKit
     
     func setup() {
         popupLayer.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0).CGColor
-        popupLayer.frame.size.width = 320
+        popupLayer.frame.size.width = 300
         popupLayer.frame.size.height = 66
         popupLayer.cornerRadius = 10
         layer.addSublayer(popupLayer)

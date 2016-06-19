@@ -20,6 +20,7 @@
 		783ED1AD1D155B2C0005C90D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783ED1A71D155B2C0005C90D /* SecondViewController.swift */; };
 		783ED1AE1D155B2C0005C90D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1A91D155B2C0005C90D /* LaunchScreen.storyboard */; };
 		783ED1AF1D155B2C0005C90D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783ED1AB1D155B2C0005C90D /* Main.storyboard */; };
+		786F9DB61D16C7A50087DE4C /* SharePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786F9DB51D16C7A50087DE4C /* SharePopUp.swift */; };
 		789394A11D168E55001951BE /* CustomPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 789394A01D168E55001951BE /* CustomPopUp.xib */; };
 		789394A31D168E7E001951BE /* CustomPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789394A21D168E7E001951BE /* CustomPopUp.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,7 @@
 		783ED1A71D155B2C0005C90D /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		783ED1AA1D155B2C0005C90D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783ED1AB1D155B2C0005C90D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		786F9DB51D16C7A50087DE4C /* SharePopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharePopUp.swift; sourceTree = "<group>"; };
 		789394A01D168E55001951BE /* CustomPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUp.xib; sourceTree = "<group>"; };
 		789394A21D168E7E001951BE /* CustomPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 		783ED1A21D155B2C0005C90D /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				786F9DB41D16C79C0087DE4C /* SharePopUp */,
 				78363C881D15F0F400FC01FC /* PopUp */,
 				783ED1A31D155B2C0005C90D /* CustomButton */,
 				783ED1A41D155B2C0005C90D /* Nib */,
@@ -203,6 +206,14 @@
 				783ED1AB1D155B2C0005C90D /* Main.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		786F9DB41D16C79C0087DE4C /* SharePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				786F9DB51D16C7A50087DE4C /* SharePopUp.swift */,
+			);
+			path = SharePopUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +352,7 @@
 				78363C8A1D15F10200FC01FC /* PopUpView.swift in Sources */,
 				78363C7F1D155D3E00FC01FC /* CustomButton.swift in Sources */,
 				783ED1AD1D155B2C0005C90D /* SecondViewController.swift in Sources */,
+				786F9DB61D16C7A50087DE4C /* SharePopUp.swift in Sources */,
 				789394A31D168E7E001951BE /* CustomPopUp.swift in Sources */,
 				78363C831D155D5D00FC01FC /* SpinningView.swift in Sources */,
 				783ED1701D1529A60005C90D /* AppDelegate.swift in Sources */,

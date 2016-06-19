@@ -11,6 +11,7 @@ import UIKit
 // MARK: Protocol
 
 protocol RectangleViewDelegate {
+    func didBeginRectangleAnimation()
     func didFinishRectangleAnimation()
 }
 
@@ -64,7 +65,7 @@ class RectangleView: UIView {
         animation.delegate = self
         animation.fromValue = NSValue(CGRect: fromValue)
         animation.toValue = NSValue(CGRect: toValue)
-        animation.duration = 0.7
+        animation.duration = 0.4
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         animation.fillMode = kCAFillModeForwards;
         animation.removedOnCompletion = false
